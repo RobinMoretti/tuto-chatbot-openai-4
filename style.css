@@ -1,0 +1,156 @@
+html{
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#tic-tact-toe-grid{
+	margin: 1rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	width: 500px; height: 500px;
+}
+
+#tic-tact-toe-grid .cell{
+	/* background-color: aqua; */
+	margin: 1px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 8rem;
+	cursor: pointer;
+}
+
+#tic-tact-toe-grid .cell .o, #tic-tact-toe-grid .cell .x{
+	display: none;
+}
+
+#tic-tact-toe-grid .played-1 .o{
+	display: initial;
+	cursor:not-allowed ;
+}
+
+#tic-tact-toe-grid .played-2 .x{
+	display: initial;
+	cursor:not-allowed;
+}
+
+#cell-0{
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+}
+
+#cell-1{
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	border-left: 3px solid black;
+}
+
+#cell-2{
+	border-left: 3px solid black;
+	border-bottom: 3px solid black;
+}
+
+#cell-3{
+	border-top: 3px solid black;
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+}
+
+#cell-4{
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	border-left: 3px solid black;
+	border-top: 3px solid black;
+}
+
+#cell-5{
+	border-top: 3px solid black;
+	border-left: 3px solid black;
+	border-bottom: 3px solid black;
+}
+
+#cell-6{
+	border-top: 3px solid black;
+	border-right: 3px solid black;
+}
+
+#cell-7{
+	border-right: 3px solid black;
+	border-top: 3px solid black;
+	border-left: 3px solid black;
+}
+
+#cell-8{
+	border-left: 3px solid black;
+	border-top: 3px solid black;
+}
+/* .played 
+
+.played-1 */
+
+.loose-cell{
+	opacity: 0.2;
+}
+
+.won-cell{
+	background-color: aqua;
+	animation: blink 1s ease 0s 2 normal forwards;
+}
+
+@keyframes blink {
+	0%,
+	50%,
+	100% {
+		opacity: 1;
+	}
+
+	25%,
+	75% {
+		opacity: 0;
+	}
+}
+
+#message-container{
+	padding: 1rem;
+	font-size: 1.5rem;
+}
+
+
+.lds-dual-ring,
+.lds-dual-ring:after {
+  box-sizing: border-box;
+}
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6.4px solid currentColor;
+  border-color: currentColor transparent currentColor transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.loader{
+	display: none;
+}
+
+.loader.visible{
+	display: initial;
+}
